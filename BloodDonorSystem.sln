@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonorsService", "DonorsService\DonorsService.csproj", "{C51BEC4D-30AB-48E3-B7E8-F75C08E4580B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Donors.API", "DonorsService\Donors.API.csproj", "{C51BEC4D-30AB-48E3-B7E8-F75C08E4580B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloodBank.API", "BloodBankService\BloodBank.API.csproj", "{4A60FE80-D81C-40CC-B0FA-56A0755C9B7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Gateway", "API.Gateway\API.Gateway.csproj", "{DDD361A2-B6EF-47C2-A905-D77BBBC173B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{C51BEC4D-30AB-48E3-B7E8-F75C08E4580B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C51BEC4D-30AB-48E3-B7E8-F75C08E4580B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C51BEC4D-30AB-48E3-B7E8-F75C08E4580B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A60FE80-D81C-40CC-B0FA-56A0755C9B7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A60FE80-D81C-40CC-B0FA-56A0755C9B7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A60FE80-D81C-40CC-B0FA-56A0755C9B7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A60FE80-D81C-40CC-B0FA-56A0755C9B7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDD361A2-B6EF-47C2-A905-D77BBBC173B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDD361A2-B6EF-47C2-A905-D77BBBC173B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDD361A2-B6EF-47C2-A905-D77BBBC173B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDD361A2-B6EF-47C2-A905-D77BBBC173B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
