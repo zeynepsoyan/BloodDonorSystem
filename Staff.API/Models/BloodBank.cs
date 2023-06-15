@@ -7,10 +7,10 @@ namespace Staff.API.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        private int Id { get; set; }
+        public int Id { get; set; }
         [Required]
-        private String Password { get; set; }
+        public String Password { get; set; }
         [Required]
-        private String BloodBankName { get; set; }
+        public String BloodBankName { get; set; }
     }
 }

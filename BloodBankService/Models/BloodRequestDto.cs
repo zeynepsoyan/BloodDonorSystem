@@ -7,21 +7,21 @@ namespace BloodBank.API.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        private int Id { get; set; }
+        public int Id { get; set; }
         [Required]
-        private String RequestorName { get; set; }
+        public String RequestorName { get; set; }
         [Required]
-        private String RequestorEmail { get; set; }
+        public String RequestorEmail { get; set; }
         [Required]
-        private int Units { get; set; }
+        public int Units { get; set; }
         [Required]
-        private String City { get; set; }
+        public String City { get; set; }
         [Required]
-        private String Town { get; set; }
+        public String Town { get; set; }
         [Required]
         [MaxLength(200)]
-        private String Reason { get; set; }
+        public String Reason { get; set; }
         [Required]
-        private int SearchDuration { get; set; }
+        public int SearchDuration { get; set; }
     }
 }

@@ -7,15 +7,15 @@ namespace Donors.API.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        private int Id { get; set; }
+        public int Id { get; set; }
         [Required]
-        private String City { get; set; }
+        public String City { get; set; }
         [Required]
-        private String Town { get; set; }
+        public String Town { get; set; }
         [Required]
         [StringLength(2)]
-        private String BloodType { get; set; }
+        public String BloodType { get; set; }
         [Required]
-        private int Units { get; set; }
+        public int Units { get; set; }
     }
 }
