@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloodBank.API", "BloodBankS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Gateway", "API.Gateway\API.Gateway.csproj", "{DDD361A2-B6EF-47C2-A905-D77BBBC173B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Staff.API", "Staff.API\Staff.API.csproj", "{FC54863A-1DE7-4170-BD10-522FC2E00382}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{DDD361A2-B6EF-47C2-A905-D77BBBC173B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDD361A2-B6EF-47C2-A905-D77BBBC173B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDD361A2-B6EF-47C2-A905-D77BBBC173B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC54863A-1DE7-4170-BD10-522FC2E00382}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC54863A-1DE7-4170-BD10-522FC2E00382}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC54863A-1DE7-4170-BD10-522FC2E00382}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC54863A-1DE7-4170-BD10-522FC2E00382}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
