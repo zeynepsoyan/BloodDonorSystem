@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Donors.API.Models
 {
     public class Donor
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         private int Id { get; set; }
         [Required]
         private String Name { get; set; }
