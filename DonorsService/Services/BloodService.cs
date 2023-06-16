@@ -23,7 +23,7 @@ namespace Donors.API.Services
 
             if (existingBlood != null)
             {
-                _access.UpdateBloodById(existingBlood.Id, true, existingBlood.Units);
+                _access.UpdateBloodById(existingBlood.Id, true, blood.Units);
             } 
             else
             {
