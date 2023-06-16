@@ -32,6 +32,11 @@ namespace Donors.API.Data
             return _context.BloodDonations.Where(d => d.donorId == donorId).ToList();
         }
 
+        public BloodDonation GetBloodDonationById(int id)
+        {
+            return _context.BloodDonations.FirstOrDefault(d => d.Id == id);
+        }
+
         public bool SaveChanges()
         {
             return _context.SaveChanges() >= 0;

@@ -6,6 +6,7 @@ namespace Donors.API.Data
     {
         bool SaveChanges();
         IEnumerable<BloodDonation> GetAllBloodDonations();
+        BloodDonation GetBloodDonationById(int id);
         IEnumerable<BloodDonation> GetBloodByDonorId(int donorId);
         void CreateBloodDonation(BloodDonation bloodDonation);
     }

@@ -18,9 +18,10 @@ namespace Donors.API.Controllers
         private readonly IMapper _mapper;
         private readonly ILogger<BloodsController> _logger;
 
-        public BloodsController(IBloodService service, IDonorAccess donorAccess, IMapper mapper, ILogger<BloodsController> logger)
+        public BloodsController(IBloodService service, IDonorAccess donorAccess, IBloodDonationAccess bloodDonationAccess ,IMapper mapper, ILogger<BloodsController> logger)
         {
             _donorAccess = donorAccess;
+            _bloodDonationAccess = bloodDonationAccess;
             _service = service;
             _mapper = mapper;
             _logger = logger;
@@ -44,6 +45,42 @@ namespace Donors.API.Controllers
             if (blood != null)
             {
                 return Ok(_mapper.Map<BloodReadDto>(blood));
+            }
+
+            return NotFound();
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<BloodDonationReadDto>> GetBloodDonations()
+        {
+            Console.WriteLine("-> Getting blood donations...");
+
+            var bloodDonations = _bloodDonationAccess.GetAllBloodDonations();
+
+            return Ok(_mapper.Map<IEnumerable<BloodDonationReadDto>>(bloodDonations));
+        }
+
+        [HttpGet("{id}", Name = "GetBloodDonationById")]
+        public ActionResult<BloodDonationReadDto> GetBloodDonationById(int id)
+        {
+            var bloodDonation = _bloodDonationAccess.GetBloodDonationById(id);
+
+            if (bloodDonation != null)
+            {
+                return Ok(_mapper.Map<BloodDonationReadDto>(bloodDonation));
+            }
+
+            return NotFound();
+        }
+
+        [HttpGet("{id}", Name = "GetBloodDonationByDonorId")]
+        public ActionResult<IEnumerable<BloodDonationReadDto>> GetBloodDonationByDonorId(int donorId)
+        {
+            var bloodDonations = _bloodDonationAccess.GetBloodByDonorId(donorId);
+
+            if (bloodDonations != null)
+            {
+                return Ok(_mapper.Map<IEnumerable<BloodDonationReadDto>>(bloodDonations));
             }
 
             return NotFound();
