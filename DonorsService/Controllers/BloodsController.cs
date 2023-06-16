@@ -14,6 +14,7 @@ namespace Donors.API.Controllers
     {
         private readonly IBloodService _service;
         private readonly IDonorAccess _donorAccess;
+        private readonly IBloodDonationAccess _bloodDonationAccess;
         private readonly IMapper _mapper;
         private readonly ILogger<BloodsController> _logger;
 
@@ -49,22 +50,25 @@ namespace Donors.API.Controllers
         }
 
         [HttpPost]
-        public ActionResult<BloodReadDto> AddBlood(BloodDonationDto bloodDonationDto)
+        public ActionResult<BloodReadDto> AddBlood(BloodDonationCreateDto bloodDonationCreateDto)
         {
-            var donor = _donorAccess.GetDonorById(bloodDonationDto.donorId);
+            var bloodDonation = _mapper.Map<BloodDonation>(bloodDonationCreateDto);
+            _bloodDonationAccess.CreateBloodDonation(bloodDonation);
+
+            var donor = _donorAccess.GetDonorById(bloodDonation.donorId);
             var bloodCreateDto = new BloodCreateDto()
             {
                 City = donor.City,
                 Town = donor.Town,
                 BloodType = donor.BloodType,
-                Units = bloodDonationDto.Units
+                Units = bloodDonation.Units
             };
             var bloodModel = _mapper.Map<Blood>(bloodCreateDto);
             _service.AddBlood(bloodModel);
 
             var bloodReadDto = _mapper.Map<BloodReadDto>(bloodModel);
 
-            return CreatedAtRoute(nameof(GetBloodById), new { Id = bloodReadDto.Id }, bloodReadDto);
+            return CreatedAtRoute(nameof(GetBloodById), new { bloodReadDto.Id }, bloodReadDto);
 
         }
     }
