@@ -50,7 +50,7 @@ namespace Donors.API.Controllers
             return NotFound();
         }
 
-        [HttpGet]
+        [HttpGet("donations")]
         public ActionResult<IEnumerable<BloodDonationReadDto>> GetBloodDonations()
         {
             Console.WriteLine("-> Getting blood donations...");
@@ -60,7 +60,7 @@ namespace Donors.API.Controllers
             return Ok(_mapper.Map<IEnumerable<BloodDonationReadDto>>(bloodDonations));
         }
 
-        [HttpGet("{id}", Name = "GetBloodDonationById")]
+        [HttpGet("donations/{donationId}", Name = "GetBloodDonationById")]
         public ActionResult<BloodDonationReadDto> GetBloodDonationById(int id)
         {
             var bloodDonation = _bloodDonationAccess.GetBloodDonationById(id);
@@ -73,8 +73,8 @@ namespace Donors.API.Controllers
             return NotFound();
         }
 
-        [HttpGet("{id}", Name = "GetBloodDonationByDonorId")]
-        public ActionResult<IEnumerable<BloodDonationReadDto>> GetBloodDonationByDonorId(int donorId)
+        [HttpGet("donations/{donorId}", Name = "GetBloodDonationsByDonorId")]
+        public ActionResult<IEnumerable<BloodDonationReadDto>> GetBloodDonationsByDonorId(int donorId)
         {
             var bloodDonations = _bloodDonationAccess.GetBloodByDonorId(donorId);
 

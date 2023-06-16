@@ -11,6 +11,5 @@ namespace Donors.API.Profiles
             CreateMap<BloodDonationCreateDto, BloodDonation>();
             CreateMap<BloodDonation, BloodDonationReadDto>();
         }
-    {
     }
 }
