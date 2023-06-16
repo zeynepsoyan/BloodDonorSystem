@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BloodBank.API.Controllers
 {
     [ApiController]
-    [Route("api/v1/b/[controller]")]
+    [Route("api/v1/[controller]")]
     public class BloodBankController : ControllerBase
     {
         private readonly IBloodRequestAccess _access;
@@ -66,14 +66,6 @@ namespace BloodBank.API.Controllers
             var donorReadDto = _mapper.Map<BloodRequestReadDto>(bloodRequestModel);
 
             return CreatedAtRoute(nameof(GetBloodRequestById), new { Id = donorReadDto.Id }, donorReadDto);
-        }
-
-        [HttpPost]
-        public ActionResult TestInboundConnection()
-        {
-            Console.WriteLine("-> Inbound POST # BloodBank Service");
-
-            return Ok("Inbound test from BloodBank Service");
         }
     }
 }
