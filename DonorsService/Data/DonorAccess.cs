@@ -4,9 +4,9 @@ namespace Donors.API.Data
 {
     public class DonorAccess : IDonorAccess
     {
-        private readonly DonorDbContext _context;
+        private readonly AppDbContext _context;
 
-        public DonorAccess(DonorDbContext context)
+        public DonorAccess(AppDbContext context)
         {
             _context = context;
         }
@@ -18,6 +18,7 @@ namespace Donors.API.Data
             }
 
             _context.Donors.Add(donor);
+            SaveChanges();
         }
 
         public IEnumerable<Donor> GetAllDonors()

@@ -13,6 +13,9 @@ namespace BloodBank.API.Models
         [Required]
         public String RequestorEmail { get; set; }
         [Required]
+        [StringLength(3)]
+        public String BloodType { get; set; }
+        [Required]
         public int Units { get; set; }
         [Required]
         public String City { get; set; }

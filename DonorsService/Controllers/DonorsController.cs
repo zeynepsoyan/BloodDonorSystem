@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace DonorsService.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     public class DonorsController : ControllerBase
     {
         private readonly IDonorAccess _access;
@@ -49,7 +49,6 @@ namespace DonorsService.Controllers
         {
             var donorModel = _mapper.Map<Donor>(donorCreateDto);
             _access.CreateDonor(donorModel);
-            _access.SaveChanges();
 
             var donorReadDto = _mapper.Map<DonorReadDto>(donorModel);
 

@@ -5,17 +5,11 @@ namespace Donors.API.Models.Dtos
 {
     public class BloodDonationDto
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        [Required]
-        [StringLength(2)]
-        public string BloodType { get; set; }
         [Required]
         public int Units { get; set; }
         [Required]
-        public string DonorName { get; set; }
+        public int donorId { get; set; }
         [Required]
-        public DateOnly DonationDate { get; set; }
+        public DateTime DonationDate { get; set; }
     }
 }

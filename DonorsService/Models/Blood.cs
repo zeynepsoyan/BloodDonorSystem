@@ -13,7 +13,7 @@ namespace Donors.API.Models
         [Required]
         public String Town { get; set; }
         [Required]
-        [StringLength(2)]
+        [StringLength(3)]
         public String BloodType { get; set; }
         [Required]
         public int Units { get; set; }
